@@ -2,24 +2,37 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Login</title>
+
+        <title>Inicio de Sesión</title>
         <link href="Login.css" rel="stylesheet" type="text/css"/>
         <script src="Login.js" type="text/javascript"></script>
+
         <!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+
     </head>
+
     <body>
-        <div id="login">
-            <form action="" method="post" name="f1">
-                <fieldset>
-                    <label for="userName" class="fontawesome-user"></label>
-                    <input type="text" required name="userName" id="userName"  placeholder="Username" >
-                    <label for="userPwd" class="fontawesome-lock"></label>
-                    <input type="password" required name="userPwd" id="userPwd" placeholder="password" >
-                    <input type="submit" value="Login">
-                </fieldset>
-            </form>
-        </div><!-- end login -->
+        <div class="login-page">
+            <div class="form">
+                <form class="register-form">
+                   
+                    <input type="text" placeholder="Nombre"/>
+                    <input type="password" placeholder="Contraseña"/>
+                    <input type="text" placeholder="Correo Electónico"/>
+                    <button>create</button>
+                    <p class="message">Ya estás registrado? <a href="#">Inicia Sesión</a></p>
+                </form>
+                
+                <form class="login-form">
+                    <input type="text" placeholder="Usuario"/>
+                    <input type="password" placeholder="Contraseña"/>
+                    <button>login</button>
+                    <p class="message">No te haz registrado? <a href="#">Create una cuenta</a></p>
+                </form>
+                
+            </div>
+        </div>
     </body>
 </html>
