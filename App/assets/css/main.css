@@ -1745,6 +1745,10 @@
 			border-color: #83d3c9;
 		}
 
+		input[type="date"]:before{
+    		content:attr(placeholder);
+		}
+
 	input[type="text"],
 	input[type="password"],
 	input[type="date"],
