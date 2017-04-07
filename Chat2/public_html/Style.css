@@ -316,13 +316,17 @@ input.textarea {
     color: #666;
     font-weight: 400;
 }
+.face-12:before {
+    content: "\6f";
+}
+
 .emojis {
     position: fixed;
     display: block;
-    bottom: 8px;
-    left: 7px;
-    width: 34px;
-    height: 34px;
+    bottom: 6px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
     background-image: url(http://i.imgur.com/5WUpcPZ.png);
     background-repeat: no-repeat;
     background-size: cover;
