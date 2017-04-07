@@ -12,7 +12,7 @@
 	<content src="index.html" />
 	<access origin="*" />
 
-	<icon src="App/images/icono.png" />
+	<icon src="App/images/icono.PNG" />
     	<icon src="App/images/icono.png"   gap:platform="android"    gap:qualifier="ldpi" />
     	<icon src="App/images/icono.png"   gap:platform="android"    gap:qualifier="mdpi" />
     	<icon src="App/images/icono.png"   gap:platform="android"    gap:qualifier="hdpi" />
