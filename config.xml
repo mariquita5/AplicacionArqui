@@ -2,7 +2,7 @@
 <widget id="com.example.hello" version="0.0.1">
   <name>ArquiApp</name>
   <description>
-    A sample Apache Cordova application that responds to the deviceready event.
+    Una aplicación que realiza un chat por medio de usuarios.
   </description>
   <author email="dev@callback.apache.org" href="http://cordova.io">
     Apache Cordova Team
