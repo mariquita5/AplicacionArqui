@@ -4,8 +4,8 @@
   <description>
     Aplicacion que se encarga de un chat entre usuarios por medio de dispositivos moviles.
   </description>
-  <author email="dev@callback.apache.org" href="http://cordova.io">
-    Apache Cordova Team
+  <author email="majomadrig5@hotmail.com>
+    Equipo los Desalmados
   </author>
   <content src="index.html" />
   <access origin="*" />
