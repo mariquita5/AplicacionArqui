@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.hello" version="0.0.1">
-  <name>HelloWorld</name>
+<widget id="com.phonegap.arqui" version="0.0.1">
+  <name>AppArqui</name>
   <description>
     A sample Apache Cordova application that responds to the deviceready event.
   </description>
