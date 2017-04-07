@@ -2,7 +2,7 @@
 <widget id="com.phonegap.arqui" version="0.0.1">
   <name>AppArqui</name>
   <description>
-    A sample Apache Cordova application that responds to the deviceready event.
+    Aplicación que se encarga de un chat entre usuarios por medio de dispositivos móviles
   </description>
   <author email="dev@callback.apache.org" href="http://cordova.io">
     Apache Cordova Team
