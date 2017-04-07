@@ -2,7 +2,7 @@
 <widget id="com.phonegap.arqui" version="0.0.1">
   <name>AppArqui</name>
   <description>
-    Aplicación que se encarga de un chat entre usuarios por medio de dispositivos móviles
+    Aplicacion que se encarga de un chat entre usuarios por medio de dispositivos moviles.
   </description>
   <author email="dev@callback.apache.org" href="http://cordova.io">
     Apache Cordova Team
