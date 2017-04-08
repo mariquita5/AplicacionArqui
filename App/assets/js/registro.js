@@ -29,6 +29,7 @@ function EnviarInformacion() {
 	} else if (contraseña1 != contraseña2) {
 		alert("Las contraseñas deben ser iguales");
 	} else {
+		alert("Usuario creado correctamente");
 		location.href = "Login.html";
 	}
 	

@@ -41,9 +41,8 @@
           </div>
         </div>
         <div class="3u 12u(mobile)">
-          <input id="btnEnvia" type="button" value="Enviar" onclick="EnviarMensajes();">
           <form action ="">
-            <button type="button" id="btnEnviar">Enviar</button>
+             <input id="btnEnviar" type="button" value="Enviar">
           </form>
         </div>
       </div>
@@ -99,7 +98,7 @@ btnEnviar.addEventListener("click", function(){
 });
 	
 firebase.database().ref('chat').on('value',function(snapshot){
-    var html = '';
+    document.getElementById("PanelTexto").innerHTML = "";
     snapshot.forEach(function(e){
         var element = e.val();
         var nombre = element.name;
@@ -107,7 +106,6 @@ firebase.database().ref('chat').on('value',function(snapshot){
 		InsertarDatos(nombre, mensaje)
     });
     
-    chatUl.innerHTML = html;
 }); 
 </script>
 </body>

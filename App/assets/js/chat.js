@@ -13,7 +13,7 @@ function EnviarMensajes() {
 function InsertarDatos(usuario, mensaje) {
 	
 	document.getElementById("PanelTexto").innerHTML += "<div class=\"row message-bubble\"> " +
-		"<p class=\"text-muted\">" + usuario + "</p>" +
+		"<p class=\"text-muted\"><strong>" + usuario + "</strong></p>" +
 		"<p>" + mensaje + "</p>" +
 		"</div>";
 }
