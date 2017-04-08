@@ -1,58 +1,73 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>Twenty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />		
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body class="index">
-		<div id="page-wrapper">
+<head>
+	<title>Chat</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />		
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+<body class="index">
+	<div id="page-wrapper">
 
-			<!-- Header -->
-			<!-- Header -->
-			<header id="header">
+		<!-- Header -->
+		<header id="header">
 			
-				<h1 id="logo"><a href="Login.html">Chat <span>Los Desalmados</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="Login.html" class="button special">Salir</a></li>
-					</ul>
-				</nav>
-			</header>
+			<h1 id="logo"><a href="Login.html">Chat <span>Los Desalmados</span></a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="Login.html" class="button special">Salir</a></li>
+				</ul>
+			</nav>
+		</header>
 
-			<!-- Main -->
-			<article id="main">
+		<!-- Main -->
+		<article id="main">
 
-				<!-- One -->
-				<section class="wrapper style2 container special-alt">
-					<div class="row 50%">
-						<div class="8u 12u(narrower)">
+			<!-- One -->
+			<section class="wrapper style2 container special-alt">
+				<div class="row 50%">
+					<div class="8u 12u(narrower)">
 
+						<div class="container" id="PanelTexto">
 							
-
 						</div>
-						
+						<div class="panel-footer">  
+							<div class="input-group">
+								<input type="text" class="form-control" id="TextoMensaje">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button" onclick="myFunction()">Send</button>
+								</span>
+							</div>
+						</div>								
+
 					</div>
-				</section>
+					
+				</div>
+			</section>
 
-			</article>
+		</article>
 
-		</div>
+	</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollgress.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
 
-	</body>
+	<script>
+		function myFunction() {
+			document.getElementById("PanelTexto").innerHTML += "<div class=\"row message-bubble\"><p class=\"text-muted\">"+"Matt Townsen"+"</p><p>"+document.getElementById("TextoMensaje").value+"</p></div>";
+		}
+	</script>
+
+</body>
 </html>
