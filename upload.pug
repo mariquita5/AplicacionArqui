@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Upload
+  body
+
+    form(action='', method='post', enctype='multipart/form-data', onsubmit='AJAXSubmit(this); return false;')
+
+      input#browse(type='file', name='file', style='display: none', onchange='Handlechange();')
+      input#filename(type='text', readonly='true')
+      input#fakeBrowse(type='button', value='Abrir', onclick='HandleBrowseClick();')
+
+      input(name='upload_preset', value='a3b5ttv5', type="hidden")
+      p
+        input(type='submit', value='Subir')
+      #results
+      img#uploaded
+
+
+    script.
+
+      function HandleBrowseClick () {
+        var fileinput = document.getElementById("browse");
+        fileinput.click();
+      }
+
+      function Handlechange () {
+        var fileinput = document.getElementById("browse");
+        var textinput = document.getElementById("filename");
+        textinput.value = fileinput.value;
+      }
+
+      window.ajaxSuccess = function () {
+        response = JSON.parse(this.responseText);
+        console.log("ajaxSuccess", typeof this.responseText);
+        console.log(response)
+        console.log('URL', response["secure_url"])
+        document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
+        document.getElementById('results').innerText = response["secure_url"];
+      }
+
+      window.AJAXSubmit = function (formElement) {
+        console.log("starting AJAXSubmit");
+        if (!formElement.action) { return; }
+        var xhr = new XMLHttpRequest();
+        xhr.onload = ajaxSuccess;
+        xhr.open("post", "https://api.cloudinary.com/v1_1/do6pbylj8/image/upload");
+        xhr.send(new FormData(formElement));
+      }
+
