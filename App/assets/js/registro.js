@@ -1,4 +1,3 @@
-
 function EnviarInformacion() {
 	var nombre = document.getElementById("nombre").value;
 	var apellido1 = document.getElementById("apellido1").value;
@@ -9,12 +8,16 @@ function EnviarInformacion() {
 	var contraseña1 = document.getElementById("contraseña1").value;
 	var contraseña2 = document.getElementById("contraseña2").value;
 	var imagen = document.getElementById("results");
-	
-    //Condicion que valida si es nuevo usuario o no
-    if (nombre == "") {
-		alert("No pueden existir espacion en blanco");	
-	} else{
-		alert("no");	
+
+	if ((nombre == "") || (apellido1 == "") || (apellido2 == "") || (correo == "") || (usuario == "") || (fecha == "") || (contraseña1 == "") || (contraseña2 == "")) {
+		alert("No pueden existir espacios en blanco");
+	} else
+	if (contraseña1.length < 8) {
+		alert("La contraseña debe tener al menos 8 caracteres");
+	} else if (contraseña1 != contraseña2) {
+		alert("Las contraseñas deben ser iguales");
+	} else {
+		location.href = "Login.html";
 	}
 }
 
