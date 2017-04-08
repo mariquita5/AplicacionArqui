@@ -1243,6 +1243,10 @@ div img {
 	max-width: 100%;
 }
 
+div p {
+	margin: 0px;
+	color: black;
+}
 /* Section/Article */
 
 section.special, article.special {
@@ -1610,7 +1614,7 @@ input[type="button"].small,  input[type="submit"].small,  input[type="reset"].sm
 	padding: 0;
 }
 .wrapper.style2 {
-	background-color: #83d3c9;
+	background-color: rgba(131,211,201,0.40);
 	background-image: url("images/light-bl.svg"), url("images/light-br.svg");
 	background-position: bottom left, bottom right;
 	background-repeat: no-repeat, no-repeat;
