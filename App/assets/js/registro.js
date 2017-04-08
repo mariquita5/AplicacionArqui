@@ -1,4 +1,16 @@
 function EnviarInformacion() {
+	
+	var config = {
+    apiKey: "AIzaSyDqemAG3f2hoGjWW9R7Ztn-AIBQ_Y0vqjs",
+    authDomain: "chat-68c9c.firebaseapp.com",
+    databaseURL: "https://chat-68c9c.firebaseio.com",
+    projectId: "chat-68c9c",
+    storageBucket: "chat-68c9c.appspot.com",
+    messagingSenderId: "1083526514232"
+    };
+	
+	firebase.initializeApp(config);
+
 	var nombre = document.getElementById("nombre").value;
 	var apellido1 = document.getElementById("apellido1").value;
 	var apellido2 = document.getElementById("apellido2").value;
@@ -19,7 +31,19 @@ function EnviarInformacion() {
 	} else {
 		location.href = "Login.html";
 	}
-}
+	
+	firebase.database().ref('usuarios').push({
+          name: nombre,
+          lastname1: apellido1,
+	      lastname2: apellido2,
+	      email:correo,
+	      date:fecha,
+	      user: usuario,
+	      contraseña1: contraseña1,
+	      contraseña2: contraseña2
+	
+});
+}	
 
 function HandleBrowseClick() {
 	var fileinput = document.getElementById("browse");
