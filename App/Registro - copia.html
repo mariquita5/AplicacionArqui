@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Registro</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+</head>
+
+<body class="contact">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			
+			<h1 id="logo"><a href="Login.html">Chat <span>Los Desalmados</span></a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="Login.html" class="button special">Volver</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<article id="main">
+
+			<!-- One -->
+			<section class="wrapper style4 special container 75%">
+
+				<!-- Content -->
+				<div class="content">
+
+					<div class="row 50%">
+						<div class="6u 12u(mobile)">
+							<input type="text" id= nombre name="nombre" placeholder="Nombre" />
+						</div>
+						<div class="6u 12u(mobile)">
+							<input type="text" id= apellido name="apellidos" placeholder="Apellidos" />
+						</div>
+					</div>
+					
+					<div class="row 50%">
+						<div class="6u 12u(mobile)">
+							<input type="text" id= correo name="correo" placeholder="Correo Electrónico" />
+						</div>
+						<div class="6u 12u(mobile)">
+							<input type="date" id= fecha name="fecha" placeholder="Fecha de nacimiento" />
+						</div>
+					</div>
+					  <button type="button" id="btnRegistro">Registrarse</button>
+					  
+					<form action="" method="post" enctype="multipart/form-data" onsubmit="AJAXSubmit(this); return false;">
+						<input id="browse" type="file" name="file" style="display: none" onchange="Handlechange();">
+						<input id="filename" type="text" readonly>
+						<input id="fakeBrowse" type="button" value="Abrir" onclick="HandleBrowseClick();">
+						<input name="upload_preset" value="a3b5ttv5" type="hidden">
+						<p>
+							<input type="submit" value="Subir">
+						</p>
+						<div id="results"></div><img id="uploaded">
+					</form>
+
+					<script>
+						function HandleBrowseClick () {
+							var fileinput = document.getElementById("browse");
+							fileinput.click();
+						}
+						
+						function Handlechange () {
+							var fileinput = document.getElementById("browse");
+							var textinput = document.getElementById("filename");
+							textinput.value = fileinput.value;
+						}
+						
+						window.ajaxSuccess = function () {
+							response = JSON.parse(this.responseText);
+							console.log("ajaxSuccess", typeof this.responseText);
+							console.log(response)
+							console.log('URL', response["secure_url"])
+							document.getElementById('uploaded').setAttribute("src", response["secure_url"]);
+							document.getElementById('results').innerText = response["secure_url"];
+						}
+						
+						window.AJAXSubmit = function (formElement) {
+							console.log("starting AJAXSubmit");
+							if (!formElement.action) { return; }
+							var xhr = new XMLHttpRequest();
+							xhr.onload = ajaxSuccess;
+							xhr.open("post", "https://api.cloudinary.com/v1_1/do6pbylj8/image/upload");
+							xhr.send(new FormData(formElement));
+						}
+					</script>
+
+				</div>
+			</section>
+
+		</article>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollgress.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	 <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDqemAG3f2hoGjWW9R7Ztn-AIBQ_Y0vqjs",
+    authDomain: "chat-68c9c.firebaseapp.com",
+    databaseURL: "https://chat-68c9c.firebaseio.com",
+    projectId: "chat-68c9c",
+    storageBucket: "chat-68c9c.appspot.com",
+    messagingSenderId: "1083526514232"
+  };
+	
+  firebase.initializeApp(config); 
+	
+	var nombre = document.getElementById('nombre');
+    var apellidos = document.getElementById('apellido');
+	var correo = document.getElementById('correo');
+	var fecha = document.getElementById('fecha');
+	var btnRegistrar = document.getElementById('btnRegistro');
+	
+	btnRegistrar.addEventListener("click", function(){
+		 var nombre = nombre.value;
+         var apellidos = apellidos.value ;
+	     var correo = correo.value;
+	     var fecha = fecha.value;
+		
+   firebase.database().ref('usuarios').push({
+          name:nombre,
+          lastname: apellidos,
+	      email:correo,
+	      date:fecha
+  });
+ });
+   </script>
+
+</body>
+</html>
